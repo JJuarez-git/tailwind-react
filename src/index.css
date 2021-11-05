@@ -1,19 +1,59 @@
+/* 
+'sm': '640px',
+'md': '768px',
+'lg': '1024px',
+'xl': '1280px',
+'2xl': '1536px', */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer components {
 
+   .App {
+      height: 200vh;
+   }
+   
+   .Home {
+      min-height: calc(80vh - (60px + 2em));
+   }
+
+   .showOn {
+      animation: showOn 500ms ease;
+   }
+
+   .showOff {
+      animation: showOff 500ms ease;
+   }
+
    .nav {
-      @apply sm:block absolute sm:relative left-0 w-full px-5 py-4 sm:px-0 sm:py-0 top-14 sm:top-0 bg-white shadow-sm sm:shadow-none;
+      @apply sm:block absolute sm:relative left-0 w-full px-4 py-4 sm:px-0 sm:py-0 top-14 sm:top-0 shadow-sm sm:shadow-none bg-gray-100;
+      /* animation: showOn 500ms ease; */
    }
 
    .nav-item {
-      @apply block sm:inline-block mx-0 sm:mx-3 font-medium text-gray-500;
+      @apply block sm:inline-block mx-0 sm:mx-3 font-medium text-gray-500 hover:text-gray-800;
    }
 
 }
 
-.App {
-   height: 200vh;
+@keyframes showOn {
+   0% {
+      opacity: 0;
+   }
+
+   100%{
+      opacity: 1;
+   }
+}
+
+@keyframes showOff {
+   0% {
+      opacity: 1;
+   }
+
+   100%{
+      opacity: 0;
+   }
 }
